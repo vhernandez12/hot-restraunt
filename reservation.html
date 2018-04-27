@@ -80,7 +80,8 @@
 <!--Java-->
 <script type="text/javascript">
 
-    $(".submit").on("click", function () {
+    $(".submit").on("click", function (e) {
+        e.preventDefault();
         var newReservation = {
             customerName: $('#reserve_name').val().trim(),
             phoneNumber: $('#reserve_phone').val().trim(),
@@ -90,7 +91,7 @@
         console.log(newReservation);
 
         var currentURL = window.location.origin;
-        $.post(currentURL + "/api/tables", newReservation,
+        $.post(currentURL + "/tables", newReservation,
             function (data) {
 
                 if (data == true) {
@@ -108,4 +109,4 @@
             });
         return false;
     });
-</script> Add CommentCollapse  BreB7:50 PM
+</script>

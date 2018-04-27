@@ -77,7 +77,7 @@
 <!-- Java -->
 <script type='text/javascript'>
     $.ajax({
-        url: '',
+        url: '/reservations',
         method: 'GET'
     }).done(function (response) {
         console.log(response.reservations);
@@ -86,7 +86,7 @@
             var waitlistSection = $('#waitlistSection');
             for (var i = 0; i < response.reservations.length; i++) {
                 var tableDiv = $('<div>').addClass('well');
-                var id = response.reservations[i].id;
+                var id = response.reservations[i].customerID;
                 tableDiv.append($('<h2>').html("<span class='label label-primary'>1</span>|"));
                 tableDiv.append($('<div>').append($('<h4>').text(id)));
                 tableSection.append(tableDiv);
